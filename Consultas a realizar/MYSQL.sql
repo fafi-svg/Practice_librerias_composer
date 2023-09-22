@@ -6,6 +6,22 @@ CREATE DATABASE NorthwindEasy;
 
 USE NorthwindEasy;
 
+select * from employees;
+select count(*) as contidad from employees;
+select * from employees as e
+order by employee_id;
+
+select * from jobs;
+
+select j.job_id, j.job_title, count(*) as "#employees"  from employees as e
+right join jobs as j
+on j.job_id = e.job_id
+group by j.job_id, j.job_title;
+show columns from employees;
+select * from employees;
+select * from employees as e
+where table_schema = "employee_id"
+and table_name = employees;
 CREATE TABLE departments(
 	department_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	department_name varchar(30) NOT NULL

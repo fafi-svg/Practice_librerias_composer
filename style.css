@@ -1,0 +1,10 @@
+.row{
+    display: grid;
+    gap: 2vw;
+    grid-template-columns: repeat(10,clamp(5%, 10%, 25%));
+    width: 100vw;
+}
+.row__item{
+    width: 100%;
+    overflow: auto;
+}
