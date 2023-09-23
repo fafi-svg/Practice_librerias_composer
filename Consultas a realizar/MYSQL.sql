@@ -19,9 +19,8 @@ on j.job_id = e.job_id
 group by j.job_id, j.job_title;
 show columns from employees;
 select * from employees;
-select * from employees as e
-where table_schema = "employee_id"
-and table_name = employees;
+select "employee_id" from employees as e;
+select employee_id from employees columns where employee_id = "employee_id";
 CREATE TABLE departments(
 	department_id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	department_name varchar(30) NOT NULL
