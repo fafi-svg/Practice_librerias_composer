@@ -818,7 +818,6 @@
 
     <script>
         function copiarAlPortapapeles(id_elemento) {
-            alert(id_elemento);
             var aux = document.createElement("input");
             aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
             document.body.appendChild(aux);
