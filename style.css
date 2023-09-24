@@ -1,8 +1,218 @@
-.row{
-    display: flex;
-    gap: 2vw;
+*{
+    font-size: clamp(8px, 1vw, 50px);
 }
-.row__item{
-    width: 10%;
-    overflow: auto;
+body{
+    display: grid;
+    gap: 2em;
+    align-items: center;
+    margin: 1vw auto;
+    
+}
+div{
+    border: 0.1em solid;
+    border-collapse: collapse;
+}
+
+p{
+    margin: 0;
+    padding: .4em 0;
+}
+.btn-copy{
+    user-select: none;
+    cursor: pointer;
+    padding: 1vw;
+    border-radius: 2vw;
+    border: 0 solid;
+}
+.tabla__content, .tabla{
+    user-select: none;
+    width: 100%;
+    text-align: center;
+}
+.query__container{
+    position: relative;
+    z-index: 5;
+    margin-top: 12vh;
+    margin-bottom: 30vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 37vh);
+}
+.query, .query__container, .tabla,.tabla__content{
+    border: 0 solid;
+}
+.query{
+    overflow: hidden;
+    height: 100vh;
+    width: 90%;
+    min-width: 740px;
+    position: relative;
+    margin: auto;
+}
+.query__span-text, .query__consult-text{
+    font-size: 1em;
+}
+.query__span-text{
+    color: blueviolet;
+    font-weight: 800;
+}
+.query__consult-text{
+    text-align: start;
+    width: 80%;
+    padding: .7vw 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.query__consult,.query__problem{
+    line-height: clamp(8px, 1.4vw, 25px);
+    border: 0 solid;
+}
+.query__consult{
+    padding: 0 5em;
+}
+.query__problem{
+    background-color: rgba(165, 165, 165, .7);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    color: white;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    z-index: 15;
+    top: 0;
+    transition: 0.4s ease-in-out;
+    transition-property: opacity;
+    overflow: hidden;
+    height: 12vh;
+    border-top-right-radius: 2vw;
+    border-top-left-radius: 2vw;
+}
+
+.query__consult{
+    background-color: rgb(169 135 47 / 66%);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    color: white;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    z-index: 15;
+    bottom: 0;
+    opacity: 1;
+    transition: 0.4s ease-in-out;
+    transition-property: opacity;
+    overflow: hidden;
+    height: 30vh;
+    display: grid;
+    align-items: center;
+    border-bottom-right-radius: 2vw;
+    border-bottom-left-radius: 2vw;
+}
+
+/*___________________________ query1 ___________________________*/
+
+.tabla__columna{
+    width: 100%;
+}
+.tabla__header , .tabla__content-elem {
+    display: grid;
+    grid-template-columns: 7% 7% 7% 18% 9%  10% 20% auto;
+}
+
+/*___________________________ query1 ___________________________*/
+/*___________________________ query2 ___________________________*/
+
+.query2 .tabla__header , .query2 .tabla__content-elem {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.query2, .query2 .query__container{
+    height: auto;
+}
+/*___________________________ query2 ___________________________*/
+/*___________________________ query3 ___________________________*/
+
+.query3 .tabla__header , .query3 .tabla__content-elem {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.query3, .query3 .query__container{
+    height: auto;
+}
+/*___________________________ query3 ___________________________*/
+/*___________________________ query4 ___________________________*/
+
+.query4 .tabla__header , .query4 .tabla__content-elem {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.query4, .query4 .query__container{
+    height: auto;
+}
+/*___________________________ query4 ___________________________*/
+/*___________________________ query5 ___________________________*/
+
+.query5 .tabla__header , .query5 .tabla__content-elem {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.query5, .query5 .query__container{
+    height: auto;
+}
+/*___________________________ query5 ___________________________*/
+/*___________________________ query6 ___________________________*/
+
+.query6 .tabla__header , .query6 .tabla__content-elem {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.query6, .query6 .query__container{
+    height: auto;
+}
+/*___________________________ query6 ___________________________*/
+/*___________________________ query7 ___________________________*/
+
+.query7 .tabla__header , .query7 .tabla__content-elem {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+/*___________________________ query7 ___________________________*/
+/*___________________________ query8 ___________________________*/
+
+.query8 .tabla__header , .query8 .tabla__content-elem {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.query8, .query8 .query__container{
+    height: auto;
+}
+/*___________________________ query8 ___________________________*/
+/*___________________________ query9 ___________________________*/
+
+.query9 .tabla__header , .query9 .tabla__content-elem {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.query9, .query9 .query__container{
+    height: auto;
+}
+/*___________________________ query9 ___________________________*/
+/*___________________________ query10 ___________________________*/
+
+.query10 .tabla__header , .query10 .tabla__content-elem {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+/*___________________________ query10 ___________________________*/
+@media screen and (max-width:600px) {
+    .query__span-text, .query__consult-text{
+        font-size: clamp(8px, 1vw, 50px);
+    }
 }
