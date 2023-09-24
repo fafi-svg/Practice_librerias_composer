@@ -13,6 +13,8 @@
         $dotenv = Dotenv::createImmutable(__DIR__);
         $dotenv->load();
         require_once __DIR__ . "/conexion.php";
+    ?>
+    <?php
         $query = $mysqli->query("select e.employee_id as 'id_employee', e.first_name, e.last_name, e.email, e.phone_number, d.department_name, ej.first_name as 'Manager name', ej.email as 'Manager email'
         from employees as e
         left join departments as d
@@ -97,7 +99,7 @@
     </div>
 
     <?php
-        require_once __DIR__ . "/conexion.php";
+ 
         $query = $mysqli->query("select d.department_name,  count(*) as employees 
         from departments as d
         right join employees as e
@@ -180,7 +182,7 @@
     </div>
 
     <?php
-        require_once __DIR__ . "/conexion.php";
+ 
         $query = $mysqli->query("select d.department_name, avg(e.salary) as Promedio from employees as e
         inner join departments as d
         on d.department_id = e.department_id 
@@ -262,7 +264,7 @@
     </div>
 
     <?php
-        require_once __DIR__ . "/conexion.php";
+ 
         $query = $mysqli->query("select e.employee_id, e.first_name, e.last_name, e.salary from employees as e
         order by salary desc
         limit 5;");
@@ -340,7 +342,7 @@
     </div>
 
     <?php
-        require_once __DIR__ . "/conexion.php";
+ 
         $query = $mysqli->query("select e.employee_id, e.first_name, e.salary as salary from employees as e
         where e.salary = (select max(salary) from employees) 
         or e.salary = (select min(salary) from employees);");
@@ -418,7 +420,7 @@
 
 
     <?php
-        require_once __DIR__ . "/conexion.php";
+ 
         $query = $mysqli->query("select e.employee_id, e.first_name, e.hire_date from employees as e
         where year(e.hire_date) = '1997';");
         $contador = 0;
@@ -495,7 +497,7 @@
 
 
     <?php
-        require_once __DIR__ . "/conexion.php";
+ 
         $query = $mysqli->query("select e.employee_id, e.first_name, j.job_title, j.min_salary, j.max_salary from employees as e
         inner join jobs as j on e.job_id = j.job_id;");
         $contador = 0;
@@ -572,7 +574,7 @@
     </div>
 
     <?php
-        require_once __DIR__ . "/conexion.php";
+ 
         $query = $mysqli->query("select d.department_name as 'Name Departments', sum(e.salary) as Nomina from employees as e
         inner join departments as d
         where d.department_id = e.department_id
@@ -653,7 +655,7 @@
     </div>
 
     <?php
-        require_once __DIR__ . "/conexion.php";
+ 
         $query = $mysqli->query("select e.manager_id as 'ID Manager', concat(ej.first_name ,' ',ej.last_name) as 'Nombre Manager', count(*) as 'N° Empleados' 
         from employees as e
         inner join employees as ej
@@ -736,7 +738,7 @@
 
 
     <?php
-        require_once __DIR__ . "/conexion.php";
+ 
         $query = $mysqli->query("select e.employee_id as ID, concat(e.first_name ,' ', e.last_name) as Empleado,
         (((year(now())*12)-((year(e.hire_date))*12))+(month(e.hire_date))) as Meses,
         (day(e.hire_date)) as Dias 
